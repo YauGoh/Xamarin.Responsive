@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:c="clr-namespace:Xamarin.Responsive.Samples.Controls"
+             xmlns:r="clr-namespace:Xamarin.Responsive;assembly=Xamarin.Responsive"
+             mc:Ignorable="d"
+             x:Class="Xamarin.Responsive.Samples.Pages.SimplePage"
+             
+             Title="Simple">
+    <ContentPage.Content>
+        <r:Container>
+            <r:Row>
+                <c:FramedLabel Text="xs:1" />
+                <c:FramedLabel Text="xs:1" />
+                <c:FramedLabel Text="xs:1" />
+                <c:FramedLabel Text="xs:1" />
+                <c:FramedLabel Text="xs:1" />
+                <c:FramedLabel Text="xs:1" />
+                <c:FramedLabel Text="xs:1" />
+                <c:FramedLabel Text="xs:1" />
+                <c:FramedLabel Text="xs:1" />
+                <c:FramedLabel Text="xs:1" />
+                <c:FramedLabel Text="xs:1" />
+                <c:FramedLabel Text="xs:1" />
+            </r:Row>
+
+            <r:Row>
+                <c:FramedLabel r:Row.Column="8" Text="Column 8" />
+                <c:FramedLabel r:Row.Column="4" Text="Column 4" />
+            </r:Row>
+
+            <r:Row>
+                <c:FramedLabel r:Row.Column="6" Text="Column 6" />
+                <c:FramedLabel r:Row.Column="6" Text="Column 6" />
+            </r:Row>
+
+            <r:Row>
+                <c:FramedLabel r:Row.Column="3" Text="Column 3" />
+                <c:FramedLabel r:Row.Column="9" Text="Column 9" />
+            </r:Row>
+        </r:Container>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:r="clr-namespace:Xamarin.Responsive;assembly=Xamarin.Responsive"
+             xmlns:c="clr-namespace:Xamarin.Responsive.Samples.Controls"
+             mc:Ignorable="d"
+             x:Class="Xamarin.Responsive.Samples.Pages.MixPhoneTabletAndDesktop">
+    <ContentPage.Content>
+        <r:Container>
+            <r:Row>
+                <c:FramedLabel r:Row.Column="12,4" Text="Mobile: 12, Tablet: 4" />
+                <c:FramedLabel r:Row.Column="12,8" Text="Mobile: 12, Tablet: 8" />
+            </r:Row>
+        </r:Container>
+    </ContentPage.Content>
+</ContentPage>

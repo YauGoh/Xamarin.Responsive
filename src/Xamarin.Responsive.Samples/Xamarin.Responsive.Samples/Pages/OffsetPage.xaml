@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:r="clr-namespace:Xamarin.Responsive;assembly=Xamarin.Responsive"
+             xmlns:c="clr-namespace:Xamarin.Responsive.Samples.Controls"
+             mc:Ignorable="d"
+             x:Class="Xamarin.Responsive.Samples.Pages.OffsetPage">
+    <ContentPage.Content>
+        <r:Container>
+            <r:Row>
+                <c:FramedLabel 
+                    r:Row.Column="3" 
+                    r:Row.Offset="3"
+                    Text="Offset 3, Column 3" />
+
+                <c:FramedLabel 
+                    r:Row.Column="6" 
+                    Text="Column 6" />
+
+                <c:FramedLabel 
+                    r:Row.Column="3" 
+                    r:Row.Offset="3"
+                    Text="Offset 3, Column 3" />
+            </r:Row>
+
+            <r:Row>
+                <c:FramedLabel 
+                    r:Row.Column="3"
+                    Text="Offset 0, Column 3" />
+
+                <c:FramedLabel 
+                    r:Row.Column="3"
+                    r:Row.Offset="6"
+                    Text="Offset 6, Column 3" />
+            </r:Row>
+        </r:Container>
+    </ContentPage.Content>
+</ContentPage>
