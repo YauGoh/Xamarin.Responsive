@@ -14,6 +14,7 @@ namespace Xamarin.Responsive.Samples.ViewModels
             {
                 new Sample<SimplePage>("Simple"),
                 new Sample<MixPhoneTabletAndDesktop>("Mixed"),
+                new Sample<FormPage>("Simple Form"),
                 new Sample<OffsetPage>("Offsets"),
                 new Sample<VisibilityPage>("Visibility")
             };

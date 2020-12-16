@@ -23,6 +23,16 @@ namespace Xamarin.Responsive
             Lg = lg;
             Xl = xl;
         }
+
+        internal ColumnSpecification WithXs(int? xs) => new ColumnSpecification(xs, Sm, Md, Lg, Xl);
+
+        internal ColumnSpecification WithSm(int? sm) => new ColumnSpecification(Xs, sm, Md, Lg, Xl);
+
+        internal ColumnSpecification WithMd(int? md) => new ColumnSpecification(Xs, Sm, md, Lg, Xl);
+
+        internal ColumnSpecification WithLg(int? lg) => new ColumnSpecification(Xs, Sm, Md, lg, Xl);
+
+        internal ColumnSpecification WithXl(int? xl) => new ColumnSpecification(Xs, Sm, Md, Lg, xl);
     }
 
     public class ColumnSpecificationTypeConverter : TypeConverter

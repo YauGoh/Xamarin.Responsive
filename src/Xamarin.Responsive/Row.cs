@@ -10,11 +10,42 @@ namespace Xamarin.Responsive
 
         public static readonly BindableProperty ColumnProperty = BindableProperty.CreateAttached("Column", typeof(ColumnSpecification), typeof(Row), new ColumnSpecification());
 
+        public static readonly BindableProperty XsProperty = BindableProperty.CreateAttached("Xs", typeof(int?), typeof(Row), null, propertyChanged: OnXsChanged);
+
+        public static readonly BindableProperty SmProperty = BindableProperty.CreateAttached("Sm", typeof(int?), typeof(Row), null, propertyChanged: OnSmChanged);
+
+        public static readonly BindableProperty MdProperty = BindableProperty.CreateAttached("Md", typeof(int?), typeof(Row), null, propertyChanged: OnMdChanged);
+
+        public static readonly BindableProperty LgProperty = BindableProperty.CreateAttached("Lg", typeof(int?), typeof(Row), null, propertyChanged: OnLgChanged);
+
+        public static readonly BindableProperty XlProperty = BindableProperty.CreateAttached("Xl", typeof(int?), typeof(Row), null, propertyChanged: OnXlChanged);
+
         public static readonly BindableProperty OffsetProperty = BindableProperty.CreateAttached("Offset", typeof(ColumnSpecification), typeof(Row), new ColumnSpecification());
+
+        public static readonly BindableProperty OffsetXsProperty = BindableProperty.CreateAttached("Xs", typeof(int?), typeof(Row), null, propertyChanged: OnOffsetXsChanged);
+
+        public static readonly BindableProperty OffsetSmProperty = BindableProperty.CreateAttached("Sm", typeof(int?), typeof(Row), null, propertyChanged: OnOffsetSmChanged);
+
+        public static readonly BindableProperty OffsetMdProperty = BindableProperty.CreateAttached("Md", typeof(int?), typeof(Row), null, propertyChanged: OnOffsetMdChanged);
+
+        public static readonly BindableProperty OffsetLgProperty = BindableProperty.CreateAttached("Lg", typeof(int?), typeof(Row), null, propertyChanged: OnOffsetLgChanged);
+
+        public static readonly BindableProperty OffsetXlProperty = BindableProperty.CreateAttached("Xl", typeof(int?), typeof(Row), null, propertyChanged: OnOffsetXlChanged);
+
 
         public static ColumnSpecification GetColumn(BindableObject bindable) => (ColumnSpecification)bindable.GetValue(ColumnProperty);
 
         public static ColumnSpecification GetOffset(BindableObject bindable) => (ColumnSpecification)bindable.GetValue(OffsetProperty);
+
+        public static int? GetXs(BindableObject bindable) => (int?)bindable.GetValue(XsProperty);
+
+        public static int? GetSm(BindableObject bindable) => (int?)bindable.GetValue(SmProperty);
+
+        public static int? GetMd(BindableObject bindable) => (int?)bindable.GetValue(MdProperty);
+
+        public static int? GetLg(BindableObject bindable) => (int?)bindable.GetValue(LgProperty);
+
+        public static int? GetXl(BindableObject bindable) => (int?)bindable.GetValue(XlProperty);
 
         protected override void LayoutChildren(double x, double y, double width, double height) => PerformLayout(new Rectangle(x, y, width, height), true);
 
@@ -105,6 +136,116 @@ namespace Xamarin.Responsive
             {
                 defered.AssignLayout(maxHeight);
             }
+        }
+
+        private static void OnXsChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newXs = (int?)newValue;
+
+            var column = Row.GetColumn(bindable);
+
+            column = column.WithXs(newXs);
+
+            bindable.SetValue(ColumnProperty, column);
+        }
+
+        private static void OnSmChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newSm = (int?)newValue;
+
+            var column = Row.GetColumn(bindable);
+
+            column = column.WithSm(newSm);
+
+            bindable.SetValue(ColumnProperty, column);
+        }
+
+        private static void OnMdChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newMd = (int?)newValue;
+
+            var column = Row.GetColumn(bindable);
+
+            column = column.WithMd(newMd);
+
+            bindable.SetValue(ColumnProperty, column);
+        }
+
+        private static void OnLgChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newLg = (int?)newValue;
+
+            var column = Row.GetColumn(bindable);
+
+            column = column.WithLg(newLg);
+
+            bindable.SetValue(ColumnProperty, column);
+        }
+
+        private static void OnXlChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newXl = (int?)newValue;
+
+            var column = Row.GetColumn(bindable);
+
+            column = column.WithXl(newXl);
+
+            bindable.SetValue(ColumnProperty, column);
+        }
+
+        private static void OnOffsetXsChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newXs = (int?)newValue;
+
+            var offset = Row.GetOffset(bindable);
+
+            offset = offset.WithXs(newXs);
+
+            bindable.SetValue(OffsetProperty, offset);
+        }
+
+        private static void OnOffsetSmChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newSm = (int?)newValue;
+
+            var offset = Row.GetOffset(bindable);
+
+            offset = offset.WithSm(newSm);
+
+            bindable.SetValue(OffsetProperty, offset);
+        }
+
+        private static void OnOffsetMdChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newMd = (int?)newValue;
+
+            var offset = Row.GetOffset(bindable);
+
+            offset = offset.WithMd(newMd);
+
+            bindable.SetValue(OffsetProperty, offset);
+        }
+
+        private static void OnOffsetLgChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newLg = (int?)newValue;
+
+            var offset = Row.GetOffset(bindable);
+
+            offset = offset.WithLg(newLg);
+
+            bindable.SetValue(OffsetProperty, offset);
+        }
+
+        private static void OnOffsetXlChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newXl = (int?)newValue;
+
+            var offset = Row.GetOffset(bindable);
+
+            offset = offset.WithXl(newXl);
+
+            bindable.SetValue(OffsetProperty, offset);
         }
     }
 

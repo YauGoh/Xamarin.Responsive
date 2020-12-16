@@ -45,6 +45,25 @@ Large devices display one quarter (3 of 12 columns).
 </ContentPage>
 ```
 
+## Setting individual columns settings
+
+By default all controls will use the width of 1 of 12 columns. If we want a control or label to fill the width on our screen when rendered on a phone, but fill only 25% of the screen otherwise (medium to extra large devices).
+
+```
+<r:Container>
+    <r:Row>
+        <Label
+            r:Row.Xs="12"
+            r:Row.Md="4"
+            Text="Name" />
+
+        <Entry
+            r:Row.Xs="12"
+            r:Row.Md="8" />
+    </r:Row>
+</r:Container>
+```
+
 ## Changing number of columns in Container
 
 By default the grid is 12 Columns, you can change this in the Container control.

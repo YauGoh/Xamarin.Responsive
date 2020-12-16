@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="PropertyChanged.Fody" Version="3.3.1" />
-    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1560" />  
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1560" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
 
@@ -31,6 +31,9 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Controls\FramedLabel.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\FormPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\MainPage.xaml">
