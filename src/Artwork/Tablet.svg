@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg121"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="Tablet.svg">
+  <defs
+     id="defs115" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="400"
+     inkscape:cy="560"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1267"
+     inkscape:window-height="967"
+     inkscape:window-x="338"
+     inkscape:window-y="338"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata118">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="IPAD"
+       sketch:type="MSLayerGroup"
+       transform="matrix(0.26458333,0,0,0.26458333,77.379645,106.21923)"
+       stroke="#7e89a3"
+       style="fill:none;fill-rule:evenodd;stroke-width:1">
+      <path
+         d="M 202.986,317 H 12.097 C 5.462,317 0.083,311.623 0.083,304.99 V 12.093 C 0.083,5.46 5.461,0.083 12.097,0.083 H 202.986 C 209.622,0.083 215,5.46 215,12.093 V 304.99 c 0,6.633 -5.378,12.01 -12.014,12.01 z"
+         id="bezel"
+         stroke-width="2"
+         fill="#fdfdfd"
+         sketch:type="MSShapeGroup" />
+      <path
+         d="M 202.986,317 H 12.097 C 5.462,317 0.083,311.623 0.083,304.99 V 12.093 C 0.083,5.46 5.461,0.083 12.097,0.083 H 202.986 C 209.622,0.083 215,5.46 215,12.093 V 304.99 c 0,6.633 -5.378,12.01 -12.014,12.01 z"
+         id="bezel-2"
+         stroke-width="2"
+         fill="#fdfdfd"
+         sketch:type="MSShapeGroup" />
+      <rect
+         id="screen"
+         fill="#ffffff"
+         sketch:type="MSShapeGroup"
+         x="17"
+         y="32"
+         width="181.99899"
+         height="252.91701" />
+      <circle
+         id="lock"
+         sketch:type="MSShapeGroup"
+         cx="108.021"
+         cy="300.021"
+         r="8.0209999" />
+      <circle
+         id="camera"
+         sketch:type="MSShapeGroup"
+         cx="106.99"
+         cy="16.99"
+         r="2.99" />
+    </g>
+  </g>
+</svg>

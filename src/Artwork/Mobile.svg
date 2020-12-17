@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg85"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="Mobile.svg">
+  <defs
+     id="defs79" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="400"
+     inkscape:cy="560"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1267"
+     inkscape:window-height="967"
+     inkscape:window-x="312"
+     inkscape:window-y="312"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata82">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       d="m 123.03112,180.16683 c 0,2.33707 -1.90262,4.23122 -4.24974,4.23122 H 92.885286 c -2.347118,0 -4.249737,-1.89415 -4.249737,-4.23122 V 116.1665 c 0,-2.33706 1.902619,-4.23121 4.249737,-4.23121 h 25.896094 c 2.34712,0 4.24974,1.89415 4.24974,4.23121 z"
+       id="path24"
+       stroke-width="0.529167"
+       fill="#fdfdfd"
+       sketch:type="MSShapeGroup"
+       style="fill-rule:evenodd;stroke:#7e89a3" />
+    <rect
+       id="rect26"
+       fill="#ffffff"
+       sketch:type="MSShapeGroup"
+       x="91.016533"
+       y="121.43886"
+       width="29.614813"
+       height="52.674309"
+       style="fill-rule:evenodd;stroke:#7e89a3;stroke-width:0.264583" />
+    <path
+       d="m 109.0082,118.72582 c 0,0.16801 -0.11615,0.30347 -0.25929,0.30347 h -5.31865 c -0.14341,0 -0.2593,-0.13573 -0.2593,-0.30347 v -0.68263 c 0,-0.16801 0.11616,-0.30347 0.2593,-0.30347 h 5.31865 c 0.14314,0 0.25929,0.13573 0.25929,0.30347 z"
+       id="speaker"
+       sketch:type="MSShapeGroup"
+       style="fill:none;fill-rule:evenodd;stroke:#7e89a3;stroke-width:0.264583" />
+    <circle
+       id="circle29"
+       sketch:type="MSShapeGroup"
+       cx="106.09778"
+       cy="115.08885"
+       r="0.79374999"
+       style="fill:none;fill-rule:evenodd;stroke:#7e89a3;stroke-width:0.264583" />
+    <ellipse
+       id="ellipse31"
+       sketch:type="MSShapeGroup"
+       cx="105.84377"
+       cy="179.11829"
+       rx="2.6564167"
+       ry="2.6460981"
+       style="fill:none;fill-rule:evenodd;stroke:#7e89a3;stroke-width:0.264583" />
+  </g>
+</svg>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg161"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="Laptop.svg">
+  <defs
+     id="defs155" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="400"
+     inkscape:cy="560"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1267"
+     inkscape:window-height="967"
+     inkscape:window-x="26"
+     inkscape:window-y="26"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata158">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="Laptop"
+       sketch:type="MSLayerGroup"
+       transform="matrix(0.26458333,0,0,0.26458333,14.273875,97.629928)"
+       stroke="#8492a5"
+       style="fill:none;fill-rule:evenodd;stroke-width:1">
+      <path
+         d="M 594,0 H 98 C 84.50415,0 73,11.073818 73,24.790113 V 351.02799 l 546,-10e-6 V 24.790113 C 618.99997,11.072821 607.53748,0 594,0 Z"
+         id="path14"
+         stroke-width="2"
+         fill="#fefefe"
+         sketch:type="MSShapeGroup" />
+      <circle
+         id="webcam"
+         stroke-width="2"
+         sketch:type="MSShapeGroup"
+         cx="347"
+         cy="19"
+         r="4" />
+      <g
+         id="bottom"
+         transform="translate(0,351)"
+         sketch:type="MSShapeGroup">
+        <path
+           d="M 640.812,31.01 H 51.288 C 20.641,31.01 0,20.494 0,16.022 V 2.428 C 0,1.084 1.335,0 2.995,0 h 686.109 c 1.662,0 2.999,1.084 2.999,2.428 v 14.129 c -0.007,3.535 -15.991,14.453 -51.291,14.453 z"
+           id="Shape"
+           stroke-width="2"
+           fill="#fdfdfd" />
+        <path
+           d="M 0.5,14.5 H 690.24268"
+           id="Line"
+           stroke-linecap="square" />
+      </g>
+      <rect
+         id="rect20"
+         fill="#ffffff"
+         sketch:type="MSShapeGroup"
+         x="95"
+         y="39"
+         width="501.07385"
+         height="292.009" />
+      <path
+         d="m 421,352 v 3.087 c 0,2.201 -4.33328,2.86571 -7.61328,2.86571 H 278.81529 C 275.36429,357.95271 271,357.289 271,355.087 V 352"
+         id="touchpad"
+         fill="#ffffff"
+         sketch:type="MSShapeGroup" />
+    </g>
+  </g>
+</svg>
