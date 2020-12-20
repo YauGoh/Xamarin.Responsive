@@ -412,7 +412,7 @@ namespace Xamarin.Responsive.Tests
                 }
             };
 
-            container.Layout(new Rectangle(Point.Zero, new Size(1200, double.PositiveInfinity)));
+            container.Layout(new Rectangle(Point.Zero, new Size(1200, double.MaxValue)));
 
             row.Bounds.Height.Should().Be(20);
         }
