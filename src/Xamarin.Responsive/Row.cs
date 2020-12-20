@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Responsive.Extensions;
 
@@ -23,21 +24,32 @@ namespace Xamarin.Responsive
 
         public static readonly BindableProperty OffsetProperty = BindableProperty.CreateAttached("Offset", typeof(ColumnSpecification), typeof(Row), new ColumnSpecification());
 
-        public static readonly BindableProperty OffsetXsProperty = BindableProperty.CreateAttached("Xs", typeof(int?), typeof(Row), null, propertyChanged: OnOffsetXsChanged);
+        public static readonly BindableProperty OffsetXsProperty = BindableProperty.CreateAttached("OffsetXs", typeof(int?), typeof(Row), null, propertyChanged: OnOffsetXsChanged);
 
-        public static readonly BindableProperty OffsetSmProperty = BindableProperty.CreateAttached("Sm", typeof(int?), typeof(Row), null, propertyChanged: OnOffsetSmChanged);
+        public static readonly BindableProperty OffsetSmProperty = BindableProperty.CreateAttached("OffsetSm", typeof(int?), typeof(Row), null, propertyChanged: OnOffsetSmChanged);
 
-        public static readonly BindableProperty OffsetMdProperty = BindableProperty.CreateAttached("Md", typeof(int?), typeof(Row), null, propertyChanged: OnOffsetMdChanged);
+        public static readonly BindableProperty OffsetMdProperty = BindableProperty.CreateAttached("OffsetMd", typeof(int?), typeof(Row), null, propertyChanged: OnOffsetMdChanged);
 
-        public static readonly BindableProperty OffsetLgProperty = BindableProperty.CreateAttached("Lg", typeof(int?), typeof(Row), null, propertyChanged: OnOffsetLgChanged);
+        public static readonly BindableProperty OffsetLgProperty = BindableProperty.CreateAttached("OffsetLg", typeof(int?), typeof(Row), null, propertyChanged: OnOffsetLgChanged);
 
-        public static readonly BindableProperty OffsetXlProperty = BindableProperty.CreateAttached("Xl", typeof(int?), typeof(Row), null, propertyChanged: OnOffsetXlChanged);
+        public static readonly BindableProperty OffsetXlProperty = BindableProperty.CreateAttached("OffsetXl", typeof(int?), typeof(Row), null, propertyChanged: OnOffsetXlChanged);
+
+        public static readonly BindableProperty OrderProperty = BindableProperty.CreateAttached(nameof(Order), typeof(OrderSpecification), typeof(Row), new OrderSpecification(), validateValue: ValidateOrder);
+
+        public static readonly BindableProperty OrderXsProperty = BindableProperty.CreateAttached("OrderXs", typeof(int?), typeof(Row), null, propertyChanged: OnOrderXsChanged);
+
+        public static readonly BindableProperty OrderSmProperty = BindableProperty.CreateAttached("OrderSm", typeof(int?), typeof(Row), null, propertyChanged: OnOrderSmChanged);
+
+        public static readonly BindableProperty OrderMdProperty = BindableProperty.CreateAttached("OrderMd", typeof(int?), typeof(Row), null, propertyChanged: OnOrderMdChanged);
+
+        public static readonly BindableProperty OrderLgProperty = BindableProperty.CreateAttached("OrderLg", typeof(int?), typeof(Row), null, propertyChanged: OnOrderLgChanged);
+
+        public static readonly BindableProperty OrderXlProperty = BindableProperty.CreateAttached("OrderXl", typeof(int?), typeof(Row), null, propertyChanged: OnOrderXlChanged);
 
         public static readonly BindableProperty HeightSpecificationsProperty = BindableProperty.Create(nameof(HeightSpecifications), typeof(ResponsiveRowHieghtSpecification), typeof(Row), new ResponsiveRowHieghtSpecification(), validateValue: ValidateHeight);
 
-        public static ColumnSpecification GetColumn(BindableObject bindable) => (ColumnSpecification)bindable.GetValue(ColumnProperty);
 
-        public static ColumnSpecification GetOffset(BindableObject bindable) => (ColumnSpecification)bindable.GetValue(OffsetProperty);
+        public static ColumnSpecification GetColumn(BindableObject bindable) => (ColumnSpecification)bindable.GetValue(ColumnProperty);
 
         public static int? GetXs(BindableObject bindable) => (int?)bindable.GetValue(XsProperty);
 
@@ -49,10 +61,42 @@ namespace Xamarin.Responsive
 
         public static int? GetXl(BindableObject bindable) => (int?)bindable.GetValue(XlProperty);
 
+        public static ColumnSpecification GetOffset(BindableObject bindable) => (ColumnSpecification)bindable.GetValue(OffsetProperty);
+
+        public static int? GetOffsetXs(BindableObject bindable) => (int?)bindable.GetValue(OffsetXsProperty);
+
+        public static int? GetOffsetSm(BindableObject bindable) => (int?)bindable.GetValue(OffsetSmProperty);
+
+        public static int? GetOffsetMd(BindableObject bindable) => (int?)bindable.GetValue(OffsetMdProperty);
+
+        public static int? GetOffsetLg(BindableObject bindable) => (int?)bindable.GetValue(OffsetLgProperty);
+
+        public static int? GetOffsetXl(BindableObject bindable) => (int?)bindable.GetValue(OffsetXlProperty);
+
+
+        public static OrderSpecification GetOrder(BindableObject bindable) => (OrderSpecification)bindable.GetValue(OrderProperty);
+
+        public static int? GetOrderXs(BindableObject bindable) => (int?)bindable.GetValue(OrderXsProperty);
+
+        public static int? GetOrderSm(BindableObject bindable) => (int?)bindable.GetValue(OrderSmProperty);
+
+        public static int? GetOrderMd(BindableObject bindable) => (int?)bindable.GetValue(OrderMdProperty);
+
+        public static int? GetOrderLg(BindableObject bindable) => (int?)bindable.GetValue(OrderLgProperty);
+
+        public static int? GetOrderXl(BindableObject bindable) => (int?)bindable.GetValue(OrderXlProperty);
+
+
         public ResponsiveRowHieghtSpecification HeightSpecifications
         {
             get => (ResponsiveRowHieghtSpecification)GetValue(HeightSpecificationsProperty);
             set => SetValue(HeightSpecificationsProperty, value);
+        }
+
+        public OrderSpecification Order
+        {
+            get => (OrderSpecification)GetValue(OrderProperty);
+            set => SetValue(OrderProperty, value);
         }
 
         internal RowHeightSpecification GetSpecification(ViewSize viewSize)
@@ -97,7 +141,9 @@ namespace Xamarin.Responsive
 
             var deferedLayouts = new List<DeferedLayout>();
 
-            foreach (var child in Children)
+            var orderedChildren = GetOrderedChildren(viewSize);
+
+            foreach (var child in orderedChildren)
             {
                 if (!child.IsVisible) continue;
 
@@ -156,6 +202,8 @@ namespace Xamarin.Responsive
 
             return new Size(region.Width, (currentY - region.Y) + maxHeight);
         }
+
+        private IEnumerable<View> GetOrderedChildren(ViewSize viewSize) => Children.OrderBy(child => child.GetOrder(viewSize)).ToList();
 
         private void CompleteLayoutFor(List<DeferedLayout> deferedLayouts, double maxHeight)
         {
@@ -275,6 +323,61 @@ namespace Xamarin.Responsive
             bindable.SetValue(OffsetProperty, offset);
         }
 
+        private static void OnOrderXsChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newXs = (int?)newValue;
+
+            var order = Row.GetOrder(bindable);
+
+            order = order.WithXs(newXs);
+
+            bindable.SetValue(OrderProperty, order);
+        }
+
+        private static void OnOrderSmChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newSm = (int?)newValue;
+
+            var order = Row.GetOrder(bindable);
+
+            order = order.WithSm(newSm);
+
+            bindable.SetValue(OrderProperty, order);
+        }
+
+        private static void OnOrderMdChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newMd = (int?)newValue;
+
+            var order = Row.GetOrder(bindable);
+
+            order = order.WithMd(newMd);
+
+            bindable.SetValue(OrderProperty, order);
+        }
+
+        private static void OnOrderLgChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newLg = (int?)newValue;
+
+            var order = Row.GetOrder(bindable);
+
+            order = order.WithLg(newLg);
+
+            bindable.SetValue(OrderProperty, order);
+        }
+
+        private static void OnOrderXlChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newXl = (int?)newValue;
+
+            var order = Row.GetOrder(bindable);
+
+            order = order.WithXl(newXl);
+
+            bindable.SetValue(OrderProperty, order);
+        }
+
         private static bool ValidateHeight(BindableObject bindable, object value) =>
             value != null &&
             value is ResponsiveRowHieghtSpecification &&
@@ -283,6 +386,10 @@ namespace Xamarin.Responsive
             (((ResponsiveRowHieghtSpecification)value).Md == null || ((ResponsiveRowHieghtSpecification)value).Md.Value > 0) &&
             (((ResponsiveRowHieghtSpecification)value).Lg == null || ((ResponsiveRowHieghtSpecification)value).Lg.Value > 0) &&
             (((ResponsiveRowHieghtSpecification)value).Xl == null || ((ResponsiveRowHieghtSpecification)value).Xl.Value > 0);
+
+        private static bool ValidateOrder(BindableObject bindable, object value) =>
+            value != null &&
+            value is OrderSpecification;
 
         class DeferedLayout
         {

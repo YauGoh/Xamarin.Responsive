@@ -69,5 +69,38 @@ namespace Xamarin.Responsive
 
             return 1;
         }
+
+        public static TView SetOrder<TView>(this TView view, OrderSpecification specs)
+           where TView : View
+        {
+            view.SetValue(Row.OrderProperty, specs);
+
+            return view;
+        }
+
+        internal static int GetOrder(this View view, ViewSize viewSize)
+        {
+            var order = (OrderSpecification)view.GetValue(Row.OrderProperty);
+
+            switch (viewSize)
+            {
+                case ViewSize.ExtraSmall:
+                    return order.Xs ?? int.MinValue;
+
+                case ViewSize.Small:
+                    return order.Sm ?? order.Xs ?? int.MinValue;
+
+                case ViewSize.Medium:
+                    return order.Md ?? order.Sm ?? order.Xs ?? int.MinValue;
+
+                case ViewSize.Large:
+                    return order.Lg ?? order.Md ?? order.Sm ?? order.Xs ?? int.MinValue;
+
+                case ViewSize.ExtraLarge:
+                    return order.Xl ?? order.Lg ?? order.Md ?? order.Sm ?? order.Xs ?? int.MinValue;
+            }
+
+            return int.MinValue;
+        }
     }
 }

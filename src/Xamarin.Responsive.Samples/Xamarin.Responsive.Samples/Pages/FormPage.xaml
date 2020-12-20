@@ -17,13 +17,15 @@
                 <r:Container>
                     <r:Row>
                         <r:Container 
-                        r:Row.Xs="12" 
-                        r:Row.Md="8">
+                            r:Row.OrderXs="2"
+                            r:Row.OrderSm="1"
+                            r:Row.Xs="12" 
+                            r:Row.Md="8">
                             <r:Row>
                                 <Label 
-                            class="heading" 
-                            r:Row.Xs="12"
-                            Text="Checkout" />
+                                class="heading" 
+                                r:Row.Xs="12"
+                                Text="Checkout" />
 
                                 <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="6" r:Row.Xl="4">
                                     <Label Text="First Name" />
@@ -163,7 +165,9 @@
                         </r:Container>
 
                         <Frame 
-                        r:Row.Xs="12" r:Row.Md="4">
+                            r:Row.OrderXs="1"
+                            r:Row.OrderSm="2"
+                            r:Row.Xs="12" r:Row.Md="4">
                             <r:Container >
                                 <r:Row>
                                     <Label r:Row.Column="12" Text="[Details]" />

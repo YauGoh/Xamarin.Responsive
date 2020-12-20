@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace Xamarin.Responsive
@@ -21,9 +22,9 @@ namespace Xamarin.Responsive
 
         private Size PerformLayout(Rectangle region, bool assignBounds)
         {
-            var width = region.Width; // - (Padding.Left + Padding.Right);
-            var x = region.X; // + Padding.Left;
-            var y = region.Y; // + Padding.Top;
+            var width = region.Width;
+            var x = region.X;
+            var y = region.Y;
 
             var heightConstrained = region.Height != double.MaxValue && !double.IsPositiveInfinity(region.Height);
             var deferedLayout = new List<DeferedLayout>();
@@ -32,7 +33,9 @@ namespace Xamarin.Responsive
 
             var viewSize = ResponsiveConfiguration.GetViewSize();
 
-            foreach (var row in Children)
+            var orderedChildren = GetOrderedChildren(viewSize);
+
+            foreach (var row in orderedChildren)
             {
                 if (!row.IsVisible) continue;
 
@@ -94,6 +97,11 @@ namespace Xamarin.Responsive
             }
 
             return new Size(width, heightConstrained ? region.Height : (y - region.Y));
+        }
+
+        private IEnumerable<Row> GetOrderedChildren(ViewSize viewSize)
+        {
+            return Children.OrderBy(row => row.GetOrder(viewSize)).ToList();
         }
 
         enum DeferedMode
