@@ -8,161 +8,173 @@
              mc:Ignorable="d"
              x:Class="Xamarin.Responsive.Samples.Pages.FormPage">
     <ContentPage.Content>
-        <r:Container>
-            <r:Row>
-                <r:Container 
-                    r:Row.Xs="12" 
-                    r:Row.Sm="8">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
+            <ScrollView HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Default">
+                <r:Container>
                     <r:Row>
-                        <Label 
+                        <r:Container 
+                        r:Row.Xs="12" 
+                        r:Row.Md="8">
+                            <r:Row>
+                                <Label 
                             class="heading" 
                             r:Row.Xs="12"
-                            Text="Heading 1" />
+                            Text="Checkout" />
 
-                        <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="6" r:Row.Xl="3">
-                            <Label Text="AAAA" />
-                            <Entry />
-                        </StackLayout>
+                                <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="6" r:Row.Xl="4">
+                                    <Label Text="First Name" />
+                                    <Entry />
+                                </StackLayout>
 
-                        <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="6" r:Row.Xl="3">
-                            <Label Text="AAAA" />
-                            <Entry />
-                        </StackLayout>
+                                <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="6" r:Row.Xl="8">
+                                    <Label Text="Surname" />
+                                    <Entry />
+                                </StackLayout>
 
-                        <StackLayout class="form-group" r:Row.Xs="12">
-                            <Label Text="AAAA" />
-                            <Entry />
-                        </StackLayout>
+                                <StackLayout class="form-group" r:Row.Xs="12">
+                                    <Label Text="Email Address" />
+                                    <Entry />
+                                </StackLayout>
 
-                        <StackLayout class="form-group" r:Row.Xs="12">
-                            <Label Text="AAAA" />
-                            <Entry />
-                        </StackLayout>
+                                <StackLayout class="form-group" r:Row.Xs="12">
+                                    <Label Text="Address Line 1" />
+                                    <Entry />
+                                </StackLayout>
 
-                        <StackLayout class="form-group" r:Row.Xs="12">
-                            <Label Text="AAAA" />
-                            <Entry />
-                        </StackLayout>
+                                <StackLayout class="form-group" r:Row.Xs="12">
+                                    <Label Text="Address Line 2" />
+                                    <Entry />
+                                </StackLayout>
 
-                        <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="4">
-                            <Label Text="AAAA" />
-                            <Entry />
-                        </StackLayout>
+                                <StackLayout class="form-group" r:Row.Xs="12">
+                                    <Label Text="Country" />
+                                    <Entry />
+                                </StackLayout>
 
-                        <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="4">
-                            <Label Text="AAAA" />
-                            <Entry />
-                        </StackLayout>
+                                <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="4">
+                                    <Label Text="Suburb" />
+                                    <Entry />
+                                </StackLayout>
 
-                        <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="4">
-                            <Label Text="AAAA" />
-                            <Entry />
-                        </StackLayout>
+                                <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="4">
+                                    <Label Text="State" />
+                                    <Entry />
+                                </StackLayout>
 
-                        <BoxView
-                            class="separator"
-                            r:Row.Xs="12"
-                            VerticalOptions="Center"
-                            HorizontalOptions="Center"
-                            HeightRequest="1"
-                            Color="#5b5d68" />
-                    </r:Row>
+                                <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="4">
+                                    <Label Text="Postcode" />
+                                    <Entry />
+                                </StackLayout>
 
-                    <r:Row>
-                        <StackLayout class="form-group" r:Row.Xs="12" Orientation="Horizontal">
-                            <CheckBox />
-                            <Label Text="AAAA" />
-                        </StackLayout>
+                                <BoxView
+                                class="separator"
+                                r:Row.Xs="12"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"
+                                HeightRequest="1"
+                                Color="#5b5d68" />
+                            </r:Row>
 
-                        <StackLayout class="form-group" r:Row.Xs="12" Orientation="Horizontal">
-                            <CheckBox />
-                            <Label Text="AAAA" />
-                        </StackLayout>
+                            <r:Row>
+                                <StackLayout class="form-group" r:Row.Xs="12" Orientation="Horizontal">
+                                    <CheckBox />
+                                    <Label Text="Shipping address is the same as my billing address" />
+                                </StackLayout>
 
-                        <BoxView
-                            class="separator"
-                            r:Row.Xs="12"
-                            VerticalOptions="Center"
-                            HorizontalOptions="Center"
-                            HeightRequest="1"
-                            Color="#5b5d68" />
-                    </r:Row>
+                                <StackLayout class="form-group" r:Row.Xs="12" Orientation="Horizontal">
+                                    <CheckBox />
+                                    <Label Text="Save this information for next time" />
+                                </StackLayout>
 
-                    <r:Row>
-                        <Label 
-                            class="heading" 
-                            r:Row.Xs="12"
-                            Text="Heading 1" />
+                                <BoxView
+                                class="separator"
+                                r:Row.Xs="12"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"
+                                HeightRequest="1"
+                                Color="#5b5d68" />
+                            </r:Row>
 
-                        <StackLayout class="form-group" r:Row.Xs="12" Orientation="Horizontal">
-                            <CheckBox />
-                            <Label Text="AAAA" />
-                        </StackLayout>
+                            <r:Row>
+                                <Label 
+                                class="heading" 
+                                r:Row.Xs="12"
+                                Text="Heading 1" />
 
-                        <StackLayout class="form-group" r:Row.Xs="12" Orientation="Horizontal">
-                            <CheckBox />
-                            <Label Text="AAAA" />
-                        </StackLayout>
+                                <StackLayout class="form-group" r:Row.Xs="12" Orientation="Horizontal">
+                                    <CheckBox />
+                                    <Label Text="Credit card" />
+                                </StackLayout>
 
-                        <StackLayout class="form-group" r:Row.Xs="12" Orientation="Horizontal">
-                            <CheckBox />
-                            <Label Text="AAAA" />
-                        </StackLayout>
+                                <StackLayout class="form-group" r:Row.Xs="12" Orientation="Horizontal">
+                                    <CheckBox />
+                                    <Label Text="Debit card" />
+                                </StackLayout>
 
-                        <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="6">
-                            <Label Text="AAAA" />
-                            <Entry />
-                        </StackLayout>
+                                <StackLayout class="form-group" r:Row.Xs="12" Orientation="Horizontal">
+                                    <CheckBox />
+                                    <Label Text="PayPal" />
+                                </StackLayout>
 
-                        <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="6">
-                            <Label Text="AAAA" />
-                            <Entry />
-                        </StackLayout>
+                                <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="6">
+                                    <Label Text="Name on card" />
+                                    <Entry />
+                                </StackLayout>
 
-                        <StackLayout class="form-group" r:Row.Xs="3">
-                            <Label Text="AAAA" />
-                            <Entry />
-                        </StackLayout>
+                                <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="6">
+                                    <Label Text="Credit card no." />
+                                    <Entry />
+                                </StackLayout>
 
-                        <StackLayout class="form-group" r:Row.Xs="3">
-                            <Label Text="AAAA" />
-                            <Entry />
-                        </StackLayout>
+                                <StackLayout class="form-group" r:Row.Xs="3">
+                                    <Label Text="Expiration" />
+                                    <Entry />
+                                </StackLayout>
 
-                        <BoxView
-                            class="separator"
-                            r:Row.Xs="12"
-                            VerticalOptions="Center"
-                            HorizontalOptions="Center"
-                            HeightRequest="1"
-                            Color="#5b5d68" />
-                    </r:Row>
-                    <r:Row>
-                        <Button 
-                            r:Row.Xs="12"
-                            r:Row.Sm="6"
-                            r:Row.Md="4"
-                            r:Row.Lg="3"
-                            r:Row.Xl="1"
-                            Text="Continue" />
+                                <StackLayout class="form-group" r:Row.Xs="3">
+                                    <Label Text="CVV" />
+                                    <Entry />
+                                </StackLayout>
 
-                        <Button 
-                            r:Row.Column="12,6,4,3,1"
-                            Text="Cancel" />
+                                <BoxView
+                                class="separator"
+                                r:Row.Xs="12"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"
+                                HeightRequest="1"
+                                Color="#5b5d68" />
+                            </r:Row>
+                            <r:Row>
+                                <Button 
+                                r:Row.Xs="12"
+                                r:Row.Sm="6"
+                                r:Row.Md="4"
+                                r:Row.Lg="3"
+                                Text="Continue" />
+
+                                <Button 
+                                r:Row.Column="12,6,4,3"
+                                Text="Cancel" />
+                            </r:Row>
+                        </r:Container>
+
+                        <Frame 
+                        r:Row.Xs="12" r:Row.Md="4">
+                            <r:Container >
+                                <r:Row>
+                                    <Label r:Row.Column="12" Text="[Details]" />
+                                </r:Row>
+                            </r:Container>
+                        </Frame>
+
                     </r:Row>
                 </r:Container>
 
-                <Frame 
-                    r:Row.Xs="12" r:Row.Sm="4">
-                    <r:Container >
-                        <r:Row>
-                            <Label Text="[Details]" />
-                        </r:Row>
-                    </r:Container>
-                </Frame>
-
-            </r:Row>
-        </r:Container>
+            </ScrollView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
