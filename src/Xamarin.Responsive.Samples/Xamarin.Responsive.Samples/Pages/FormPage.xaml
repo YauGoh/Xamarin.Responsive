@@ -10,15 +10,158 @@
     <ContentPage.Content>
         <r:Container>
             <r:Row>
-                <r:Row r:Row.Column="12">
-                    <Label r:Row.Xs="12" r:Row.Md="4" Text="Name" />
-                    <Entry r:Row.Xs="12" r:Row.Md="8" />
-                </r:Row>
+                <r:Container 
+                    r:Row.Xs="12" 
+                    r:Row.Sm="8">
 
-                <r:Row r:Row.Column="12">
-                    <Label r:Row.Xs="12" r:Row.Md="4" Text="Age" />
-                    <Entry r:Row.Xs="12" r:Row.Md="8" />
-                </r:Row>
+                    <r:Row>
+                        <Label 
+                            class="heading" 
+                            r:Row.Xs="12"
+                            Text="Heading 1" />
+
+                        <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="6" r:Row.Xl="3">
+                            <Label Text="AAAA" />
+                            <Entry />
+                        </StackLayout>
+
+                        <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="6" r:Row.Xl="3">
+                            <Label Text="AAAA" />
+                            <Entry />
+                        </StackLayout>
+
+                        <StackLayout class="form-group" r:Row.Xs="12">
+                            <Label Text="AAAA" />
+                            <Entry />
+                        </StackLayout>
+
+                        <StackLayout class="form-group" r:Row.Xs="12">
+                            <Label Text="AAAA" />
+                            <Entry />
+                        </StackLayout>
+
+                        <StackLayout class="form-group" r:Row.Xs="12">
+                            <Label Text="AAAA" />
+                            <Entry />
+                        </StackLayout>
+
+                        <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="4">
+                            <Label Text="AAAA" />
+                            <Entry />
+                        </StackLayout>
+
+                        <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="4">
+                            <Label Text="AAAA" />
+                            <Entry />
+                        </StackLayout>
+
+                        <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="4">
+                            <Label Text="AAAA" />
+                            <Entry />
+                        </StackLayout>
+
+                        <BoxView
+                            class="separator"
+                            r:Row.Xs="12"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            HeightRequest="1"
+                            Color="#5b5d68" />
+                    </r:Row>
+
+                    <r:Row>
+                        <StackLayout class="form-group" r:Row.Xs="12" Orientation="Horizontal">
+                            <CheckBox />
+                            <Label Text="AAAA" />
+                        </StackLayout>
+
+                        <StackLayout class="form-group" r:Row.Xs="12" Orientation="Horizontal">
+                            <CheckBox />
+                            <Label Text="AAAA" />
+                        </StackLayout>
+
+                        <BoxView
+                            class="separator"
+                            r:Row.Xs="12"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            HeightRequest="1"
+                            Color="#5b5d68" />
+                    </r:Row>
+
+                    <r:Row>
+                        <Label 
+                            class="heading" 
+                            r:Row.Xs="12"
+                            Text="Heading 1" />
+
+                        <StackLayout class="form-group" r:Row.Xs="12" Orientation="Horizontal">
+                            <CheckBox />
+                            <Label Text="AAAA" />
+                        </StackLayout>
+
+                        <StackLayout class="form-group" r:Row.Xs="12" Orientation="Horizontal">
+                            <CheckBox />
+                            <Label Text="AAAA" />
+                        </StackLayout>
+
+                        <StackLayout class="form-group" r:Row.Xs="12" Orientation="Horizontal">
+                            <CheckBox />
+                            <Label Text="AAAA" />
+                        </StackLayout>
+
+                        <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="6">
+                            <Label Text="AAAA" />
+                            <Entry />
+                        </StackLayout>
+
+                        <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="6">
+                            <Label Text="AAAA" />
+                            <Entry />
+                        </StackLayout>
+
+                        <StackLayout class="form-group" r:Row.Xs="3">
+                            <Label Text="AAAA" />
+                            <Entry />
+                        </StackLayout>
+
+                        <StackLayout class="form-group" r:Row.Xs="3">
+                            <Label Text="AAAA" />
+                            <Entry />
+                        </StackLayout>
+
+                        <BoxView
+                            class="separator"
+                            r:Row.Xs="12"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            HeightRequest="1"
+                            Color="#5b5d68" />
+                    </r:Row>
+                    <r:Row>
+                        <Button 
+                            r:Row.Xs="12"
+                            r:Row.Sm="6"
+                            r:Row.Md="4"
+                            r:Row.Lg="3"
+                            r:Row.Xl="1"
+                            Text="Continue" />
+
+                        <Button 
+                            r:Row.Column="12,6,4,3,1"
+                            Text="Cancel" />
+                    </r:Row>
+                </r:Container>
+
+                <Frame 
+                    r:Row.Xs="12" r:Row.Sm="4">
+                    <r:Container >
+                        <r:Row>
+                            <Label Text="[Details]" />
+                        </r:Row>
+                    </r:Container>
+                </Frame>
+
             </r:Row>
         </r:Container>
     </ContentPage.Content>

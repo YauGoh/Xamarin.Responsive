@@ -25,7 +25,7 @@ namespace Xamarin.Responsive
             var x = region.X; // + Padding.Left;
             var y = region.Y; // + Padding.Top;
 
-            var heightConstrained = !double.IsInfinity(region.Height);
+            var heightConstrained = region.Height != double.MaxValue;
             var deferedLayout = new List<DeferedLayout>();
             var totalFills = 0.0;
             var allocatedHeight = 0.0;
@@ -38,7 +38,7 @@ namespace Xamarin.Responsive
 
                 row.SetNumberOfColumns(Columns);
 
-                var allowHeight = double.PositiveInfinity;
+                var allowHeight = double.MaxValue;
 
                 var heightSpecification = row.GetSpecification(viewSize);
 
