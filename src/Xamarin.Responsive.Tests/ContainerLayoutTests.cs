@@ -494,5 +494,38 @@ namespace Xamarin.Responsive.Tests
             view2.Bounds.Should().Be(new Rectangle(600, 0, 600, 33.0));
             view3.Bounds.Should().Be(new Rectangle(300, 33.0, 300.0, 55.0));
         }
+
+        [Theory]
+        [InlineData(10, 0, 0, 0, 10, 0, 90, 20)]
+        [InlineData(0, 10, 0, 0, 0, 10, 100, 30)]
+        [InlineData(0, 0, 10, 0, 0, 0, 90, 20)]
+        [InlineData(0, 0, 0, 10, 0, 0, 100, 30)]
+        [InlineData(10, 5, 10, 5, 10, 5, 80, 30)]
+        public void ShouldLayoutChildrenWithMargins(double left, double top, double right, double bottom, double expectedX, double expectedY, double expectedWidth, double expectedRowHeight)
+        {
+            UseWindowWidth(1200);
+
+            Row row;
+            var view = new MockView(20) { Margin = new Thickness(left, top, right, bottom) };
+
+            var container = new Container
+            {
+                IsPlatformEnabled = true,
+                Children =
+                {
+                    (row = new Row
+                    {
+                        IsPlatformEnabled = true,
+                        Children = { view }
+                    })
+                }
+            };
+
+            container.Layout(new Rectangle(Point.Zero, WindowSize));
+
+            row.Bounds.Height.Should().Be(expectedRowHeight);
+
+            view.Bounds.Should().Be(new Rectangle(expectedX, expectedY, expectedWidth, 20));
+        }
     }
 }

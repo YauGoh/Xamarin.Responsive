@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace Xamarin.Responsive
 {
@@ -23,23 +25,106 @@ namespace Xamarin.Responsive
             var x = region.X; // + Padding.Left;
             var y = region.Y; // + Padding.Top;
 
+            var heightConstrained = !double.IsInfinity(region.Height);
+            var deferedLayout = new List<DeferedLayout>();
+            var totalFills = 0.0;
+            var allocatedHeight = 0.0;
+
+            var viewSize = ResponsiveConfiguration.GetViewSize();
+
             foreach (var row in Children)
             {
                 if (!row.IsVisible) continue;
 
                 row.SetNumberOfColumns(Columns);
 
-                var size = row.Measure(width, double.MaxValue);
+                var allowHeight = double.PositiveInfinity;
 
-                var rowBounds = new Rectangle(x, y, width, size.Minimum.Height);
+                var heightSpecification = row.GetSpecification(viewSize);
 
-                if (assignBounds)
-                    row.Layout(rowBounds); //.ApplyPadding(row.Padding));
+                if (heightSpecification.Unit == RowHeightUnit.Pixels) allowHeight = heightSpecification.Value;
 
-                y += size.Request.Height;
+                if (heightSpecification.Unit == RowHeightUnit.Auto)
+                {
+                    var size = row.Measure(width, allowHeight).Minimum;
+
+                    deferedLayout.Add(new DeferedLayout(row, DeferedMode.Assigned, size: size));
+
+                    allocatedHeight += size.Height;
+                }
+                else if (heightSpecification.Unit == RowHeightUnit.Pixels)
+                {
+                    var size = new Size(width, heightSpecification.Value);
+
+                    deferedLayout.Add(new DeferedLayout(row, DeferedMode.Assigned, size: size));
+
+                    allocatedHeight += size.Height;
+                }
+                else if (!heightConstrained)
+                {
+                    var size = row.Measure(width, allowHeight).Minimum;
+
+                    deferedLayout.Add(new DeferedLayout(row, DeferedMode.Assigned, size: size));
+
+                    allocatedHeight += size.Height;
+                }
+                else
+                {
+                    deferedLayout.Add(new DeferedLayout(row, DeferedMode.Fill, fillCount: heightSpecification.Value));
+
+                    totalFills += heightSpecification.Value;
+                }
             }
 
-            return new Size(width, (y - region.Y));
+            var unallocatedSpace = totalFills > 0 ? region.Height - allocatedHeight : 0;
+
+            var currentPoint = new Point(x, y);
+
+            foreach (var layout in deferedLayout)
+            {
+                var rectangle = layout.GetRectangle(currentPoint, width, unallocatedSpace, totalFills);
+
+                if (assignBounds)
+                {
+                    layout.Apply(rectangle);
+                }
+
+                y += rectangle.Height;
+                currentPoint = new Point(x, y);
+            }
+
+            return new Size(width, heightConstrained ? region.Height : (y - region.Y));
+        }
+
+        enum DeferedMode
+        {
+            Assigned,
+            Fill
+        }
+
+        class DeferedLayout
+        {
+            private readonly Row _row;
+            private readonly DeferedMode _mode;
+            private readonly Size? _size;
+            private readonly double? _fillCount;
+
+            internal DeferedLayout(Row row, DeferedMode mode, Size? size = null, double? fillCount = null)
+            {
+                _row = row;
+                _mode = mode;
+                _size = mode == DeferedMode.Assigned ? (size ?? throw new ArgumentException("Size expected")) : size;
+                _fillCount = mode == DeferedMode.Fill ? (fillCount ?? throw new ArgumentException("fill count expected")) : fillCount;
+            }
+
+            internal Rectangle GetRectangle(Point current, double width, double unallocatedSpace, double totalFills)
+            {
+                if (_mode == DeferedMode.Assigned) return new Rectangle(current, _size.Value);
+
+                return new Rectangle(current, new Size(width, ((_fillCount ?? 0) * unallocatedSpace) / totalFills));
+            }
+
+            internal void Apply(Rectangle rectangle) => _row.Layout(rectangle);
         }
     }
 }

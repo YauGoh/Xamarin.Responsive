@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using Xamarin.Responsive.Extensions;
 
 namespace Xamarin.Responsive
 {
@@ -32,6 +33,7 @@ namespace Xamarin.Responsive
 
         public static readonly BindableProperty OffsetXlProperty = BindableProperty.CreateAttached("Xl", typeof(int?), typeof(Row), null, propertyChanged: OnOffsetXlChanged);
 
+        public static readonly BindableProperty HeightSpecificationsProperty = BindableProperty.Create(nameof(HeightSpecifications), typeof(ResponsiveRowHieghtSpecification), typeof(Row), new ResponsiveRowHieghtSpecification(), validateValue: ValidateHeight);
 
         public static ColumnSpecification GetColumn(BindableObject bindable) => (ColumnSpecification)bindable.GetValue(ColumnProperty);
 
@@ -46,6 +48,31 @@ namespace Xamarin.Responsive
         public static int? GetLg(BindableObject bindable) => (int?)bindable.GetValue(LgProperty);
 
         public static int? GetXl(BindableObject bindable) => (int?)bindable.GetValue(XlProperty);
+
+        public ResponsiveRowHieghtSpecification HeightSpecifications
+        {
+            get => (ResponsiveRowHieghtSpecification)GetValue(HeightSpecificationsProperty);
+            set => SetValue(HeightSpecificationsProperty, value);
+        }
+
+        internal RowHeightSpecification GetSpecification(ViewSize viewSize)
+        {
+            switch (viewSize)
+            {
+                case ViewSize.ExtraSmall:
+                    return HeightSpecifications.Xs ?? new RowHeightSpecification(1, RowHeightUnit.Auto);
+                case ViewSize.Small:
+                    return HeightSpecifications.Sm ?? HeightSpecifications.Xs ?? new RowHeightSpecification(1, RowHeightUnit.Auto);
+                case ViewSize.Medium:
+                    return HeightSpecifications.Md ?? HeightSpecifications.Sm ?? HeightSpecifications.Xs ?? new RowHeightSpecification(1, RowHeightUnit.Auto);
+                case ViewSize.Large:
+                    return HeightSpecifications.Lg ?? HeightSpecifications.Md ?? HeightSpecifications.Sm ?? HeightSpecifications.Xs ?? new RowHeightSpecification(1, RowHeightUnit.Auto);
+                case ViewSize.ExtraLarge:
+                    return HeightSpecifications.Xl ?? HeightSpecifications.Lg ?? HeightSpecifications.Md ?? HeightSpecifications.Sm ?? HeightSpecifications.Xs ?? new RowHeightSpecification(1, RowHeightUnit.Auto);
+                default:
+                    return new RowHeightSpecification(1, RowHeightUnit.Auto);
+            }
+        }
 
         protected override void LayoutChildren(double x, double y, double width, double height) => PerformLayout(new Rectangle(x, y, width, height), true);
 
@@ -88,7 +115,7 @@ namespace Xamarin.Responsive
 
                 var columnWidth = ratio * useableWidth;
 
-                var size = child.Measure(columnWidth, double.MaxValue);
+                var size = child.Measure(columnWidth - child.Margin.GetWidth(), double.MaxValue).Minimum.AddHeight(child.Margin.GetHeight());
 
                 if ((currentColumnSpan + columnSpan) > _columns)
                 {
@@ -102,16 +129,16 @@ namespace Xamarin.Responsive
                         deferedLayouts.Clear();
                     }
 
-                    maxHeight = size.Minimum.Height;
+                    maxHeight = size.Height;
                 }
                 else
                 {
                     currentColumnSpan += columnSpan;
 
-                    maxHeight = Math.Max(maxHeight, size.Minimum.Height);
+                    maxHeight = Math.Max(maxHeight, size.Height);
                 }
 
-                var bounds = new Rectangle(currentX + offsetWidth, currentY, columnWidth, size.Minimum.Height);
+                var bounds = new Rectangle(currentX + offsetWidth, currentY, columnWidth, size.Height);
 
                 if (assignBounds)
                 {
@@ -247,22 +274,33 @@ namespace Xamarin.Responsive
 
             bindable.SetValue(OffsetProperty, offset);
         }
-    }
 
-    class DeferedLayout
-    {
-        private readonly Rectangle _rectangle;
-        private readonly View _view;
+        private static bool ValidateHeight(BindableObject bindable, object value) =>
+            value != null &&
+            value is ResponsiveRowHieghtSpecification &&
+            (((ResponsiveRowHieghtSpecification)value).Xs == null || ((ResponsiveRowHieghtSpecification)value).Xs.Value > 0) &&
+            (((ResponsiveRowHieghtSpecification)value).Sm == null || ((ResponsiveRowHieghtSpecification)value).Sm.Value > 0) &&
+            (((ResponsiveRowHieghtSpecification)value).Md == null || ((ResponsiveRowHieghtSpecification)value).Md.Value > 0) &&
+            (((ResponsiveRowHieghtSpecification)value).Lg == null || ((ResponsiveRowHieghtSpecification)value).Lg.Value > 0) &&
+            (((ResponsiveRowHieghtSpecification)value).Xl == null || ((ResponsiveRowHieghtSpecification)value).Xl.Value > 0);
 
-        public DeferedLayout(Rectangle rectangle, View view)
+        class DeferedLayout
         {
-            _rectangle = rectangle;
-            _view = view;
-        }
+            private readonly Rectangle _rectangle;
+            private readonly View _view;
 
-        public void AssignLayout(double maxHeight)
-        {
-            _view.Layout(_rectangle.AppluHeight(maxHeight));
+            public DeferedLayout(Rectangle rectangle, View view)
+            {
+                _rectangle = rectangle;
+                _view = view;
+            }
+
+            public void AssignLayout(double maxHeight)
+            {
+                _view.Layout(_rectangle
+                    .ApplyMargin(_view.Margin)
+                    .ApplyHeight(maxHeight - _view.Margin.GetHeight()));
+            }
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
+using Xamarin.Responsive.Extensions;
 
 namespace Xamarin.Responsive
 {
@@ -16,7 +17,7 @@ namespace Xamarin.Responsive
                 rectangle.Height - (padding.Top + padding.Bottom));
         }
 
-        public static Rectangle AppluHeight(this Rectangle rectangle, double height)
+        public static Rectangle ApplyHeight(this Rectangle rectangle, double height)
         {
             return new Rectangle(
                 rectangle.X,
@@ -24,5 +25,12 @@ namespace Xamarin.Responsive
                 rectangle.Width,
                 height);
         }
+
+        public static Rectangle ApplyMargin(this Rectangle rectangle, Thickness thickness) =>
+            new Rectangle(
+                rectangle.X + thickness.Left,
+                rectangle.Y + thickness.Top,
+                rectangle.Width - thickness.GetWidth(),
+                rectangle.Height - thickness.GetHeight());
     }
 }
