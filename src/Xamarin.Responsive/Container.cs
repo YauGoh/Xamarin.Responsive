@@ -49,7 +49,7 @@ namespace Xamarin.Responsive
 
                 if (heightSpecification.Unit == RowHeightUnit.Auto)
                 {
-                    var size = row.Measure(width, allowHeight).Minimum;
+                    var size = row.Measure(width, allowHeight).Request;
 
                     deferedLayout.Add(new DeferedLayout(row, DeferedMode.Assigned, size: size));
 
@@ -65,7 +65,7 @@ namespace Xamarin.Responsive
                 }
                 else if (!heightConstrained)
                 {
-                    var size = row.Measure(width, allowHeight).Minimum;
+                    var size = row.Measure(width, allowHeight).Request;
 
                     deferedLayout.Add(new DeferedLayout(row, DeferedMode.Assigned, size: size));
 

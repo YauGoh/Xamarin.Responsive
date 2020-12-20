@@ -10,22 +10,22 @@
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-
             <ScrollView HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Default">
                 <r:Container>
                     <r:Row>
-                        <r:Container 
+                        <r:Container
                             r:Row.OrderXs="2"
                             r:Row.OrderSm="1"
+                            
                             r:Row.Xs="12" 
                             r:Row.Md="8">
                             <r:Row>
                                 <Label 
-                                class="heading" 
-                                r:Row.Xs="12"
-                                Text="Checkout" />
+                            class="heading" 
+                            r:Row.Xs="12"
+                            Text="Checkout" />
 
                                 <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="6" r:Row.Xl="4">
                                     <Label Text="First Name" />
@@ -143,12 +143,12 @@
                                 </StackLayout>
 
                                 <BoxView
-                                class="separator"
-                                r:Row.Xs="12"
-                                VerticalOptions="Center"
-                                HorizontalOptions="Center"
-                                HeightRequest="1"
-                                Color="#5b5d68" />
+                                    class="separator"
+                                    r:Row.Xs="12"
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Center"
+                                    HeightRequest="1"
+                                    Color="#5b5d68" />
                             </r:Row>
                             <r:Row>
                                 <Button 
@@ -164,21 +164,132 @@
                             </r:Row>
                         </r:Container>
 
-                        <Frame 
-                            r:Row.OrderXs="1"
+                        
+                            <StackLayout
+                                r:Row.OrderXs="1"
                             r:Row.OrderSm="2"
+                            
                             r:Row.Xs="12" r:Row.Md="4">
-                            <r:Container >
-                                <r:Row>
-                                    <Label r:Row.Column="12" Text="[Details]" />
-                                </r:Row>
-                            </r:Container>
-                        </Frame>
+                                <Label Text="Details" />
+                                <Frame Padding="5,10,0,10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
 
+
+                                        <Label Text="Coffee" FontAttributes="Bold" />
+                                        <Label Text="$4.20" Grid.Column="1" HorizontalTextAlignment="End" />
+                                        <Label TextColor="#5b5d68"
+                                                   Grid.Row="1" 
+                                                   Grid.ColumnSpan="2"
+                                                   Text="Flat white, large" />
+
+                                        <BoxView
+                                            class="separator"
+                                            Grid.Row="2" 
+                                            Grid.ColumnSpan="2"
+                                            VerticalOptions="Center"
+                                            HeightRequest="1"
+                                            Color="#5b5d68" />
+
+                                    </Grid>
+                                </Frame>
+                                <!--
+                                <Frame Padding="5,10,0,10">
+                                    <Grid r:Row.Column="12">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="100" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+
+
+                                        <Label Text="Carrot Cake" FontAttributes="Bold" />
+                                        <Label Text="$6.40" Grid.Column="1" HorizontalTextAlignment="End" />
+                                        <Label TextColor="#5b5d68"
+                                                   Grid.Row="1" 
+                                                   Grid.ColumnSpan="2"
+                                                   Text="Extra cream" />
+
+                                        <BoxView
+                                            class="separator"
+                                            Grid.Row="2" 
+                                            Grid.ColumnSpan="2"
+                                            VerticalOptions="Center"
+                                            HeightRequest="1"
+                                            Color="#5b5d68" />
+
+                                    </Grid>
+                                </Frame>
+
+                                <Frame Padding="5,10,0,10">
+                                    <Grid r:Row.Column="12">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="100" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+
+
+                                        <Label Text="Bacon &amp; Egg sandwich" FontAttributes="Bold" />
+                                        <Label Text="$5.50" Grid.Column="1" HorizontalTextAlignment="End" />
+                                        <Label TextColor="#5b5d68"
+                                                   Grid.Row="1" 
+                                                   Grid.ColumnSpan="2"
+                                                   Text="Deliciousness" />
+
+                                        <BoxView
+                                            class="separator"
+                                            Grid.Row="2" 
+                                            Grid.ColumnSpan="2"
+                                            VerticalOptions="Center"
+                                            HeightRequest="1"
+                                            Color="#5b5d68" />
+
+                                    </Grid>
+                                </Frame>
+
+                                <Frame Padding="5,10,0,10">
+                                    <Grid r:Row.Column="12">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="100" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+
+
+                                        <Label Text="Total: " FontAttributes="Bold" HorizontalTextAlignment="End" />
+                                        <Label Text="$16.10" FontAttributes="Bold" Grid.Column="1" HorizontalTextAlignment="End" />
+
+
+                                    </Grid>
+                                </Frame>-->
+                            </StackLayout>
+                       
                     </r:Row>
                 </r:Container>
 
             </ScrollView>
         </Grid>
+
     </ContentPage.Content>
 </ContentPage>

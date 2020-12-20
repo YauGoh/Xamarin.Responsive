@@ -161,7 +161,8 @@ namespace Xamarin.Responsive
 
                 var columnWidth = ratio * useableWidth;
 
-                var size = child.Measure(columnWidth - child.Margin.GetWidth(), double.MaxValue).Minimum.AddHeight(child.Margin.GetHeight());
+                var sizeRequest = child.Measure(columnWidth - child.Margin.GetWidth(), double.PositiveInfinity);
+                var size = sizeRequest.Request.AddHeight(child.Margin.GetHeight());
 
                 if ((currentColumnSpan + columnSpan) > _columns)
                 {
