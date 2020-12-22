@@ -15,7 +15,10 @@
    version="1.1"
    id="svg161"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
-   sodipodi:docname="Laptop.svg">
+   sodipodi:docname="Laptop.svg"
+   inkscape:export-filename="C:\dev\nuget\Xamarin.Responsive\src\Artwork\Laptop.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
   <defs
      id="defs155" />
   <sodipodi:namedview
@@ -27,7 +30,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
      inkscape:cx="366.6056"
-     inkscape:cy="440.61233"
+     inkscape:cy="527.39804"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
