@@ -2,6 +2,24 @@
 
 Simple responsive grid implementation for Xamarin Forms, inspired by the responsive grid from [Twitter Bootstrap](https://getbootstrap.com/docs/4.0/layout/grid/).
 
+Using a simple Control Template to create a Xamarin App that is responsive to when it is opened on a mobile, tablet, laptop or desktop.
+
+<img src="./src/Artwork/Mobile.png"
+     width="120px"
+     style="float: left; margin: 20px"
+     alt="Markdown Monster icon"
+      />
+
+<img src="./src/Artwork/Tablet.png"
+     width="300px" 
+     style="max-width: 100%; float: left;  margin: 20px"
+     alt="Markdown Monster icon" />
+
+<img src="./src/Artwork/Laptop.png"
+     width="500px" 
+     style="max-width: 100%; margin: 20px"
+     alt="Markdown Monster icon" />
+
 # Getting started
 
 Install from package manager
