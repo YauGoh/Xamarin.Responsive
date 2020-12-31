@@ -126,12 +126,12 @@ eg.
     <Label>
         <Label.Text>
             <r:OnViewSize
-                x:TypeArguments=""x:String""
-                Lg=""Large""
-                Md=""Medium""
-                Sm=""Small""
-                Xl=""Extra Large""
-                Xs=""Extra Small""
+                x:TypeArguments="x:String"
+                Lg="Large"
+                Md="Medium"
+                Sm="Small"
+                Xl="Extra Large"
+                Xs="Extra Small"
             />
         </Label.Text>
     </Label>
