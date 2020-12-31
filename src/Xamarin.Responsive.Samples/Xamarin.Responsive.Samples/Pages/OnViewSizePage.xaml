@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Xamarin.Responsive.Samples.Pages.OnViewSizePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:r="clr-namespace:Xamarin.Responsive;assembly=Xamarin.Responsive">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Label
+                Grid.Row="0"
+                HorizontalOptions="CenterAndExpand"
+                Text="Resize window to see the label value change"
+                VerticalOptions="CenterAndExpand" />
+
+            <Label
+                Grid.Row="1"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand">
+                <Label.Text>
+                    <r:OnViewSize
+                        x:TypeArguments="x:String"
+                        Lg="Large"
+                        Md="Medium"
+                        Sm="Small"
+                        Xl="Extra Large"
+                        Xs="Extra Small" />
+                </Label.Text>
+                <Label.Margin>
+                    <r:OnViewSize
+                        x:TypeArguments="Thickness"
+                        Lg="4,4,4,4"
+                        Md="3,3,3,3"
+                        Sm="2,2,2,2"
+                        Xl="5,5,5,5"
+                        Xs="1,1,1,1" />
+                </Label.Margin>
+            </Label>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

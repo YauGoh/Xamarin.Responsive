@@ -1,8 +1,8 @@
 # Introduction
 
-Simple responsive grid implementation for Xamarin Forms, inspired by the responsive grid from [Twitter Bootstrap](https://getbootstrap.com/docs/4.0/layout/grid/).
+Devices come in all sorts of sizes. We need a solution to make application development easier when targetting solutions that support devices ranging from mobile to desktop devices.
 
-Using a simple Control Template to create a Xamarin App that is responsive to when it is opened on a mobile, tablet, laptop or desktop.
+Here is a responsive grid inspired by the original responsive grid from [Twitter Bootstrap](https://getbootstrap.com/docs/4.0/layout/grid/). It will allow you to create a single solution with a single layout that responds when opened from a Mobile, Tablet or Desktop, or when the window is resized small to large.
 
 <img src="./src/Artwork/Mobile.png"
      width="120px"
@@ -32,6 +32,28 @@ Install from dot cli
 
 ```
 dotnet add package Xamarin.Responsive
+```
+
+# Responsive Breakpoints
+
+Layout is managed base on the the View Size of the main application's window. Just like Bootstrap's responsive grid we define a layout as being:
+
+-   Extra small (Xs) - Application windows with a width <= 576 pixels
+-   Small (Sm) - Application windows with a width > 576 pixels but <= 768 pixels
+-   Medium (Md) - Application windows with a width > 768 pixels but <= 996 pixels
+-   Large (Lg) - Application windows with a width > 996 pixels but <= 1024 pixels
+-   Extra Large (Xl) - Application windows with a width > 1024 pixels
+
+# Import Xamarin.Responsive namespace
+
+Import the responsive namespace into your XAML.
+
+```
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:r="clr-namespace:Xamarin.Responsive;assembly=Xamarin.Responsive">
+    ...
+</ContentPage>
 ```
 
 # Samples
@@ -90,4 +112,58 @@ By default the grid is 12 Columns, you can change this in the Container control.
     <r:Container Columns="4">
         ...
     </r:Container>
+```
+
+## Responsively set control properties
+
+Control properties such as Text, Visiblility can be set responsively.
+
+eg.
+
+-   Setting the text of a Label
+
+```
+    <Label>
+        <Label.Text>
+            <r:OnViewSize
+                x:TypeArguments=""x:String""
+                Lg=""Large""
+                Md=""Medium""
+                Sm=""Small""
+                Xl=""Extra Large""
+                Xs=""Extra Small""
+            />
+        </Label.Text>
+    </Label>
+```
+
+-   Setting the margin
+
+```
+    <Label Text="Margin Changes on View Size">
+        <Label.Margin>
+            <r:OnViewSize
+                x:TypeArguments="Thickness"
+                Xs="10,10,10,10"
+                Sm="20,20,20,20"
+                Md="30,30,30,30"
+                Lg="40,40,40,40"
+                Xl="50,50,50,50"
+            />
+        </Label.Margin>
+    </Label>
+```
+
+-   You can default a Value and Selectively set values for specific View Sizes.
+
+```
+    <Label>
+        <Label.Text>
+            <r:OnViewSize
+                x:TypeArguments="x:String"
+                Default="Hello World!"
+                Xl="Your device is extra large"
+            />
+        </Label.Text>
+    </Label>
 ```
