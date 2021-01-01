@@ -1,36 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:r="clr-namespace:Xamarin.Responsive;assembly=Xamarin.Responsive"
-             xmlns:c="clr-namespace:Xamarin.Responsive.Samples.Controls"
-             mc:Ignorable="d"
-             x:Class="Xamarin.Responsive.Samples.Pages.VisibilityPage"
-             Title="Visibility">
+<ContentPage
+    x:Class="Xamarin.Responsive.Samples.Pages.VisibilityPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:r="clr-namespace:Xamarin.Responsive;assembly=Xamarin.Responsive"
+    Title="Visibility"
+    mc:Ignorable="d">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Resize Page width to see changes" />
-            <r:Visibility Visible="true,false,false,false,false">
-                <Label Text="Visible XSmall" />
-            </r:Visibility>
+            <Label Text="Visible XSmall">
+                <Label.IsVisible>
+                    <r:OnViewSize
+                        x:TypeArguments="x:Boolean"
+                        Default="false"
+                        Xs="true" />
+                </Label.IsVisible>
+            </Label>
 
-            <r:Visibility Visible="false,true,false,false,false">
-                <Label Text="Visible Small" />
-            </r:Visibility>
+            <Label Text="Visible Small">
+                <Label.IsVisible>
+                    <r:OnViewSize
+                        x:TypeArguments="x:Boolean"
+                        Default="false"
+                        Sm="true" />
+                </Label.IsVisible>
+            </Label>
 
-            <r:Visibility Visible="false,false,true,false,false">
-                <Label Text="Visible Medium" />
-            </r:Visibility>
+            <Label Text="Visible Medium">
+                <Label.IsVisible>
+                    <r:OnViewSize
+                        x:TypeArguments="x:Boolean"
+                        Default="false"
+                        Md="true" />
+                </Label.IsVisible>
+            </Label>
 
-            <r:Visibility Visible="false,false,false,true,false">
-                <Label Text="Visible Large" />
-            </r:Visibility>
+            <Label Text="Visible Large">
+                <Label.IsVisible>
+                    <r:OnViewSize
+                        x:TypeArguments="x:Boolean"
+                        Default="false"
+                        Lg="true" />
+                </Label.IsVisible>
+            </Label>
 
-            <r:Visibility Visible="false,false,false,false,true">
-                <Label Text="Visible XLarge" />
-            </r:Visibility>
-
+            <Label Text="Visible XLarge">
+                <Label.IsVisible>
+                    <r:OnViewSize
+                        x:TypeArguments="x:Boolean"
+                        Default="false"
+                        Xl="true" />
+                </Label.IsVisible>
+            </Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

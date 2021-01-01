@@ -1,8 +1,10 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace Xamarin.Responsive
 {
+    [Obsolete("Use OnViewSize xaml extension for setting the IsVisible property instead.")]
     [TypeConverter(typeof(VisibleSpecificationTypeConverter))]
     public class VisibleSpecification
     {

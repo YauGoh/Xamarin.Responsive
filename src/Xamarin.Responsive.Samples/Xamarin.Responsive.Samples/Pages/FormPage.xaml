@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:r="clr-namespace:Xamarin.Responsive;assembly=Xamarin.Responsive"
-             
-             mc:Ignorable="d"
-             x:Class="Xamarin.Responsive.Samples.Pages.FormPage">
+<ContentPage
+    x:Class="Xamarin.Responsive.Samples.Pages.FormPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:r="clr-namespace:Xamarin.Responsive;assembly=Xamarin.Responsive"
+    mc:Ignorable="d">
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -16,192 +16,231 @@
                 <r:Container>
                     <r:Row>
                         <r:Container
-                            r:Row.OrderXs="2"
+                            r:Row.Md="8"
                             r:Row.OrderSm="1"
-                            
-                            r:Row.Xs="12" 
-                            r:Row.Md="8">
+                            r:Row.OrderXs="2"
+                            r:Row.Xs="12">
                             <r:Row>
-                                <Label 
-                            class="heading" 
-                            r:Row.Xs="12"
-                            Text="Checkout" />
+                                <Label
+                                    r:Row.Xs="12"
+                                    Text="Checkout"
+                                    class="heading" />
 
-                                <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="6" r:Row.Xl="4">
+                                <StackLayout
+                                    r:Row.Sm="6"
+                                    r:Row.Xl="4"
+                                    r:Row.Xs="12"
+                                    class="form-group">
                                     <Label Text="First Name" />
                                     <Entry />
                                 </StackLayout>
 
-                                <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="6" r:Row.Xl="8">
+                                <StackLayout
+                                    r:Row.Sm="6"
+                                    r:Row.Xl="8"
+                                    r:Row.Xs="12"
+                                    class="form-group">
                                     <Label Text="Surname" />
                                     <Entry />
                                 </StackLayout>
 
-                                <StackLayout class="form-group" r:Row.Xs="12">
+                                <StackLayout r:Row.Xs="12" class="form-group">
                                     <Label Text="Email Address" />
                                     <Entry />
                                 </StackLayout>
 
-                                <StackLayout class="form-group" r:Row.Xs="12">
+                                <StackLayout r:Row.Xs="12" class="form-group">
                                     <Label Text="Address Line 1" />
                                     <Entry />
                                 </StackLayout>
 
-                                <StackLayout class="form-group" r:Row.Xs="12">
+                                <StackLayout r:Row.Xs="12" class="form-group">
                                     <Label Text="Address Line 2" />
                                     <Entry />
                                 </StackLayout>
 
-                                <StackLayout class="form-group" r:Row.Xs="12">
+                                <StackLayout r:Row.Xs="12" class="form-group">
                                     <Label Text="Country" />
                                     <Entry />
                                 </StackLayout>
 
-                                <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="4">
+                                <StackLayout
+                                    r:Row.Sm="4"
+                                    r:Row.Xs="12"
+                                    class="form-group">
                                     <Label Text="Suburb" />
                                     <Entry />
                                 </StackLayout>
 
-                                <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="4">
+                                <StackLayout
+                                    r:Row.Sm="4"
+                                    r:Row.Xs="12"
+                                    class="form-group">
                                     <Label Text="State" />
                                     <Entry />
                                 </StackLayout>
 
-                                <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="4">
+                                <StackLayout
+                                    r:Row.Sm="4"
+                                    r:Row.Xs="12"
+                                    class="form-group">
                                     <Label Text="Postcode" />
                                     <Entry />
                                 </StackLayout>
 
                                 <BoxView
-                                class="separator"
-                                r:Row.Xs="12"
-                                VerticalOptions="Center"
-                                HorizontalOptions="Center"
-                                HeightRequest="1"
-                                Color="#5b5d68" />
+                                    r:Row.Xs="12"
+                                    HeightRequest="1"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    class="separator"
+                                    Color="#5b5d68" />
                             </r:Row>
 
                             <r:Row>
-                                <StackLayout class="form-group" r:Row.Xs="12" Orientation="Horizontal">
+                                <StackLayout
+                                    r:Row.Xs="12"
+                                    Orientation="Horizontal"
+                                    class="form-group">
                                     <CheckBox />
                                     <Label Text="Shipping address is the same as my billing address" />
                                 </StackLayout>
 
-                                <StackLayout class="form-group" r:Row.Xs="12" Orientation="Horizontal">
+                                <StackLayout
+                                    r:Row.Xs="12"
+                                    Orientation="Horizontal"
+                                    class="form-group">
                                     <CheckBox />
                                     <Label Text="Save this information for next time" />
                                 </StackLayout>
 
                                 <BoxView
-                                class="separator"
-                                r:Row.Xs="12"
-                                VerticalOptions="Center"
-                                HorizontalOptions="Center"
-                                HeightRequest="1"
-                                Color="#5b5d68" />
+                                    r:Row.Xs="12"
+                                    HeightRequest="1"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    class="separator"
+                                    Color="#5b5d68" />
                             </r:Row>
 
                             <r:Row>
-                                <Label 
-                                class="heading" 
-                                r:Row.Xs="12"
-                                Text="Heading 1" />
+                                <Label
+                                    r:Row.Xs="12"
+                                    Text="Heading 1"
+                                    class="heading" />
 
-                                <StackLayout class="form-group" r:Row.Xs="12" Orientation="Horizontal">
+                                <StackLayout
+                                    r:Row.Xs="12"
+                                    Orientation="Horizontal"
+                                    class="form-group">
                                     <CheckBox />
                                     <Label Text="Credit card" />
                                 </StackLayout>
 
-                                <StackLayout class="form-group" r:Row.Xs="12" Orientation="Horizontal">
+                                <StackLayout
+                                    r:Row.Xs="12"
+                                    Orientation="Horizontal"
+                                    class="form-group">
                                     <CheckBox />
                                     <Label Text="Debit card" />
                                 </StackLayout>
 
-                                <StackLayout class="form-group" r:Row.Xs="12" Orientation="Horizontal">
+                                <StackLayout
+                                    r:Row.Xs="12"
+                                    Orientation="Horizontal"
+                                    class="form-group">
                                     <CheckBox />
                                     <Label Text="PayPal" />
                                 </StackLayout>
 
-                                <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="6">
+                                <StackLayout
+                                    r:Row.Sm="6"
+                                    r:Row.Xs="12"
+                                    class="form-group">
                                     <Label Text="Name on card" />
                                     <Entry />
                                 </StackLayout>
 
-                                <StackLayout class="form-group" r:Row.Xs="12" r:Row.Sm="6">
+                                <StackLayout
+                                    r:Row.Sm="6"
+                                    r:Row.Xs="12"
+                                    class="form-group">
                                     <Label Text="Credit card no." />
                                     <Entry />
                                 </StackLayout>
 
-                                <StackLayout class="form-group" r:Row.Xs="3">
+                                <StackLayout r:Row.Xs="3" class="form-group">
                                     <Label Text="Expiration" />
                                     <Entry />
                                 </StackLayout>
 
-                                <StackLayout class="form-group" r:Row.Xs="3">
+                                <StackLayout r:Row.Xs="3" class="form-group">
                                     <Label Text="CVV" />
                                     <Entry />
                                 </StackLayout>
 
                                 <BoxView
-                                    class="separator"
                                     r:Row.Xs="12"
-                                    VerticalOptions="Center"
-                                    HorizontalOptions="Center"
                                     HeightRequest="1"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    class="separator"
                                     Color="#5b5d68" />
                             </r:Row>
                             <r:Row>
-                                <Button 
-                                r:Row.Xs="12"
-                                r:Row.Sm="6"
-                                r:Row.Md="4"
-                                r:Row.Lg="3"
-                                Text="Continue" />
+                                <Button
+                                    r:Row.Lg="3"
+                                    r:Row.Md="4"
+                                    r:Row.Sm="6"
+                                    r:Row.Xs="12"
+                                    Text="Continue" />
 
-                                <Button 
-                                r:Row.Column="12,6,4,3"
-                                Text="Cancel" />
+                                <Button r:Row.Column="12,6,4,3" Text="Cancel" />
                             </r:Row>
                         </r:Container>
 
-                        
-                            <StackLayout
-                                r:Row.OrderXs="1"
+
+                        <StackLayout
+                            r:Row.Md="4"
                             r:Row.OrderSm="2"
-                            
-                            r:Row.Xs="12" r:Row.Md="4">
-                                <Label Text="Details" />
-                                <Frame Padding="5,10,0,10">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="auto" />
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition />
-                                            <RowDefinition />
-                                            <RowDefinition />
-                                        </Grid.RowDefinitions>
+                            r:Row.OrderXs="1"
+                            r:Row.Xs="12">
+                            <Label Text="Details" />
+                            <Frame Padding="5,10,0,10">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
 
 
-                                        <Label Text="Coffee" FontAttributes="Bold" />
-                                        <Label Text="$4.20" Grid.Column="1" HorizontalTextAlignment="End" />
-                                        <Label TextColor="#5b5d68"
-                                                   Grid.Row="1" 
-                                                   Grid.ColumnSpan="2"
-                                                   Text="Flat white, large" />
+                                    <Label FontAttributes="Bold" Text="Coffee" />
+                                    <Label
+                                        Grid.Column="1"
+                                        HorizontalTextAlignment="End"
+                                        Text="$4.20" />
+                                    <Label
+                                        Grid.Row="1"
+                                        Grid.ColumnSpan="2"
+                                        Text="Flat white, large"
+                                        TextColor="#5b5d68" />
 
-                                        <BoxView
-                                            class="separator"
-                                            Grid.Row="2" 
-                                            Grid.ColumnSpan="2"
-                                            VerticalOptions="Center"
-                                            HeightRequest="1"
-                                            Color="#5b5d68" />
+                                    <BoxView
+                                        Grid.Row="2"
+                                        Grid.ColumnSpan="2"
+                                        HeightRequest="1"
+                                        VerticalOptions="Center"
+                                        class="separator"
+                                        Color="#5b5d68" />
 
-                                    </Grid>
-                                </Frame>
-                                <!--
+                                </Grid>
+                            </Frame>
+                            <!--
                                 <Frame Padding="5,10,0,10">
                                     <Grid r:Row.Column="12">
                                         <Grid.ColumnDefinitions>
@@ -218,13 +257,13 @@
                                         <Label Text="Carrot Cake" FontAttributes="Bold" />
                                         <Label Text="$6.40" Grid.Column="1" HorizontalTextAlignment="End" />
                                         <Label TextColor="#5b5d68"
-                                                   Grid.Row="1" 
+                                                   Grid.Row="1"
                                                    Grid.ColumnSpan="2"
                                                    Text="Extra cream" />
 
                                         <BoxView
                                             class="separator"
-                                            Grid.Row="2" 
+                                            Grid.Row="2"
                                             Grid.ColumnSpan="2"
                                             VerticalOptions="Center"
                                             HeightRequest="1"
@@ -249,13 +288,13 @@
                                         <Label Text="Bacon &amp; Egg sandwich" FontAttributes="Bold" />
                                         <Label Text="$5.50" Grid.Column="1" HorizontalTextAlignment="End" />
                                         <Label TextColor="#5b5d68"
-                                                   Grid.Row="1" 
+                                                   Grid.Row="1"
                                                    Grid.ColumnSpan="2"
                                                    Text="Deliciousness" />
 
                                         <BoxView
                                             class="separator"
-                                            Grid.Row="2" 
+                                            Grid.Row="2"
                                             Grid.ColumnSpan="2"
                                             VerticalOptions="Center"
                                             HeightRequest="1"
@@ -283,8 +322,8 @@
 
                                     </Grid>
                                 </Frame>-->
-                            </StackLayout>
-                       
+                        </StackLayout>
+
                     </r:Row>
                 </r:Container>
 

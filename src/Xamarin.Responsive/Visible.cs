@@ -1,7 +1,9 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 
 namespace Xamarin.Responsive
 {
+    [Obsolete("Use OnViewSize xaml extension for setting the IsVisible property instead.")]
     public class Visibility : ContentView
     {
         public static readonly BindableProperty VisibleProperty = BindableProperty.Create(nameof(Visible), typeof(VisibleSpecification), typeof(Visibility), new VisibleSpecification(), propertyChanged: OnVisibilityChanged);
