@@ -102,7 +102,7 @@
                                     r:Row.Xs="12"
                                     Orientation="Horizontal"
                                     class="form-group">
-                                    <CheckBox />
+                                    <!--<CheckBox />-->
                                     <Label Text="Shipping address is the same as my billing address" />
                                 </StackLayout>
 
@@ -110,7 +110,7 @@
                                     r:Row.Xs="12"
                                     Orientation="Horizontal"
                                     class="form-group">
-                                    <CheckBox />
+                                    <!--<CheckBox />-->
                                     <Label Text="Save this information for next time" />
                                 </StackLayout>
 
@@ -133,7 +133,7 @@
                                     r:Row.Xs="12"
                                     Orientation="Horizontal"
                                     class="form-group">
-                                    <CheckBox />
+                                    <!--<CheckBox />-->
                                     <Label Text="Credit card" />
                                 </StackLayout>
 
@@ -141,7 +141,7 @@
                                     r:Row.Xs="12"
                                     Orientation="Horizontal"
                                     class="form-group">
-                                    <CheckBox />
+                                    <!--<CheckBox />-->
                                     <Label Text="Debit card" />
                                 </StackLayout>
 
@@ -149,7 +149,7 @@
                                     r:Row.Xs="12"
                                     Orientation="Horizontal"
                                     class="form-group">
-                                    <CheckBox />
+                                    <!--<CheckBox />-->
                                     <Label Text="PayPal" />
                                 </StackLayout>
 
