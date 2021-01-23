@@ -96,6 +96,7 @@ class Build : NukeBuild
              .SetPackageTags("Xamarin", "Xamarin Forms", "Responsive", "Grid", "Bootstrap")
              .SetRepositoryUrl("https://github.com/YauGoh/Xamarin.Responsive")
              .SetPackageProjectUrl("https://github.com/YauGoh/Xamarin.Responsive")
+             .SetPackageLicenseUrl("https://licenses.nuget.org/MIT")
              .SetOutputDirectory(OutputDirectory)
             );
         });
