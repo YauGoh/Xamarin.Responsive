@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Xamarin.Responsive.Samples.Pages.AspectPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:r="clr-namespace:Xamarin.Responsive;assembly=Xamarin.Responsive">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <r:AspectRatio Ratio="4,3">
+                <Label Background="Green" Text="4:3 Aspect Ratio" />
+            </r:AspectRatio>
+        </Grid>
+        <!--<Grid>
+            <ScrollView HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Default">
+                <r:Container>
+                    <r:Row>
+                        <r:AspectRatio
+                            Padding="10,10"
+                            r:Row.Column="6"
+                            Ratio="4,3">
+                            <Label
+                                Background="Green"
+                                HorizontalTextAlignment="Center"
+                                Text="Aspect 4:3"
+                                VerticalTextAlignment="Center" />
+                        </r:AspectRatio>
+                    </r:Row>
+
+                    <r:Row>
+                        <r:AspectRatio
+                            Padding="10,10"
+                            r:Row.Column="6"
+                            Ratio="16,9">
+                            <Label
+                                Background="Green"
+                                HorizontalTextAlignment="Center"
+                                Text="Aspect 16:9"
+                                VerticalTextAlignment="Center" />
+                        </r:AspectRatio>
+                    </r:Row>
+
+                    <r:Row>
+                        <r:AspectRatio
+                            Padding="10,10"
+                            r:Row.Column="6"
+                            Ratio="3,2">
+                            <Label
+                                Background="Green"
+                                HorizontalTextAlignment="Center"
+                                Text="Aspect 3:2"
+                                VerticalTextAlignment="Center" />
+                        </r:AspectRatio>
+                    </r:Row>
+
+                    <r:Row>
+                        <r:AspectRatio
+                            Padding="10,10"
+                            r:Row.Column="6"
+                            Ratio="21,9">
+                            <Label
+                                Background="Green"
+                                HorizontalTextAlignment="Center"
+                                Text="Aspect 21:9"
+                                VerticalTextAlignment="Center" />
+                        </r:AspectRatio>
+                    </r:Row>
+                </r:Container>
+            </ScrollView>
+        </Grid>-->
+    </ContentPage.Content>
+</ContentPage> 

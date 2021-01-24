@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Xamarin.Responsive.Tests
 {
-    [Collection("WindowSize")]
+    [Collection(nameof(BaseTests))]
     public class RowAttachedOrderPropertyTests : BaseTests
     {
         [Fact]

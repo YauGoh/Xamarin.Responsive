@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace Xamarin.Responsive.Tests
 {
-    [Collection("WindowSize")]
+    [Collection(nameof(BaseTests))]
     public class ContainerLayoutTests : BaseTests
     {
         [Theory]

@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Xamarin.Responsive.Tests
 {
-    [Collection("WindowSize")]
+    [Collection(nameof(BaseTests))]
     public class OnViewSizeTests : BaseTests
     {
         public OnViewSizeTests()

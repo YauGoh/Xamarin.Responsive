@@ -167,3 +167,19 @@ eg.
         </Label.Text>
     </Label>
 ```
+
+## Aspect Ratio
+
+Maintain a specific aspect ratio for a control.
+
+```
+<Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="auto" />
+    </Grid.RowDefinitions>
+
+    <r:AspectRatio Ratio="4,3">
+        <Label Background="Green" Text="4:3 Aspect Ratio" />
+    </r:AspectRatio>
+</Grid>
+```

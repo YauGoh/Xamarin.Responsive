@@ -17,7 +17,8 @@ namespace Xamarin.Responsive.Samples.ViewModels
                 new Sample<FormPage>("Simple Form"),
                 new Sample<OffsetPage>("Offsets"),
                 new Sample<VisibilityPage>("Visibility"),
-                new Sample<OnViewSizePage>("Set Properties on View Size")
+                new Sample<OnViewSizePage>("Set Properties on View Size"),
+                new Sample<AspectPage>("Aspect")
             };
 
             PropertyChanged += SamplesViewModel_PropertyChanged;

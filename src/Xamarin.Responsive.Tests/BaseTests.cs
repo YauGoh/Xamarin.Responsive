@@ -27,7 +27,7 @@ namespace Xamarin.Responsive.Tests
 
         internal void UseWindowWidth(double windowWidth)
         {
-            _mockWindowSizeEmitter.SetWindowSize(new Size(windowWidth, 600));
+            _mockWindowSizeEmitter.SetWindowSize(new Size(windowWidth, windowWidth * 2));
         }
 
         internal void UseExtraSmallDevice() => UseWindowWidth(576.0);
