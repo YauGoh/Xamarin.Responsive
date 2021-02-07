@@ -11,7 +11,7 @@ namespace Xamarin.Responsive
         Pixels
     }
 
-
+    [TypeConverter(typeof(ResponsiveRowHieghtSpecificationTypeConverter))]
     public class ResponsiveRowHieghtSpecification
     {
         public ResponsiveRowHieghtSpecification(
